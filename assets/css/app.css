@@ -1,0 +1,135 @@
+@import url("http://fonts.cdnfonts.com/css/akrobat");
+body {
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  align-items: center;
+  justify-content: center;
+}
+
+:root {
+  --scrolbar: #EAC43D;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.3rem;
+  display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #1F232B;
+  border-radius: 3px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--scrolbar);
+  border-radius: 1px;
+  box-shadow: 0px 0px 4px #1900ff;
+}
+
+.order {
+  position: absolute;
+  width: 11.813rem;
+  height: 2.5rem;
+  left: 103rem;
+  top: 63rem;
+  background-image: url("../img/order.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.click {
+  background: rgba(244, 251, 255, 0.1);
+  border: 2px solid #707070;
+  -webkit-backdrop-filter: blur(250px);
+          backdrop-filter: blur(250px);
+  border-radius: 85px;
+}
+
+#app {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.border {
+  box-sizing: border-box;
+  position: absolute;
+  width: 49.375rem;
+  height: 6.063rem;
+  background: linear-gradient(90deg, #000000 21.88%, rgba(0, 0, 0, 0) 100%);
+  opacity: 0.95;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.categories {
+  position: absolute;
+  white-space: nowrap;
+  overflow-y: scroll;
+  position: absolute;
+  margin: auto auto;
+  left: 20.6rem;
+  width: 30rem;
+  height: 4rem;
+  left: 1rem;
+  top: 1.5rem;
+  z-index: 1;
+}
+.categories > info {
+  position: relative;
+  flex-direction: column;
+  flex-wrap: wrap;
+  top: 1rem;
+  margin-left: 2rem;
+  font-family: "SF UI Text";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.188rem;
+  color: #FFFFFF;
+  z-index: 1;
+}
+
+.features {
+  position: absolute;
+  width: 52.25rem;
+  height: 6.625rem;
+  top: 61rem;
+  background: linear-gradient(90deg, #000000 21.88%, rgba(0, 0, 0, 0) 100%);
+  opacity: 0.95;
+}
+.features > detail {
+  position: relative;
+  float: left;
+  margin-left: 2rem;
+  top: 1.7rem;
+  width: 10rem;
+  height: 15rem;
+  font-family: "SF UI Text";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.813rem;
+  text-align: center;
+  color: white;
+}
+.features > detail > h1 {
+  position: absolute;
+  width: 10rem;
+  height: 1.25rem;
+  font-family: "SF UI Text";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  text-align: center;
+  color: #FFFFFF;
+}/*# sourceMappingURL=app.css.map */

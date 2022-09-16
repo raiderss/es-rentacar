@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>es-rentacar</title>
+    <link rel="stylesheet" href="../assets/css/app.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/line-awesome/dist/line-awesome/css/line-awesome.min.css">
+
+</head>
+
+<div id="app" v-if="ui">
+<div class="features">
+    <detail>Max Speed<h1>{{speed}}KM/H</h1></detail>
+    <detail>Fuel<h1>{{fuel}}L/10KM</h1></detail>
+    <detail>Traction<h1>{{traction}}%</h1></detail>
+    <detail>Acceleration<h1>{{acceleration}}%</h1></detail>
+</div>
+
+<div @click="Buy()" class="order"></div>
+
+<div class="border"></div>
+
+<div class="categories">
+    <info v-for="data in vehicles" @click="Q(data)" :class="{ click : select == data.model }">{{data.label}}</info>
+</div>
+    
+</div>
+
+<script src="./assets/data.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script src="./vue.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</body>
+
+</html>
