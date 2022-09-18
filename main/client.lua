@@ -8,7 +8,9 @@ TriggerEvent(
 
 local vehicle = nil
 local spawn = nil
+local time = 0
 local location = {}
+
 
 RegisterNUICallback(
     "Vehicle",
@@ -45,6 +47,7 @@ RegisterNUICallback(
                             SetVehicleEngineOn(car, true, true)
                             DisplayRadar(true)
                             DisplayHud(true)
+                            SetVehicleNumberPlateText(car, Config.PlateText)
                     end,spawn,true)
                 else
                     ESX.ShowNotification("Insufficient Money")
@@ -52,6 +55,44 @@ RegisterNUICallback(
             end, data.price)
     end
 )
+
+function second(time)
+    local minutes = math.floor((time%3600/60))
+    local seconds = math.floor((time%60))
+    return string.format("%02dm %02ds",minutes,seconds)
+end
+
+function rent(vehicle) 
+    time = Config.Time
+    Citizen.CreateThread(function()
+          while true do
+              Citizen.Wait(1)
+              if time ~= 0 then
+                  Citizen.Wait(1000)
+                  time = time - 1
+              else
+                DeleteEntity(vehicle)
+                break
+              end
+          end
+      end)
+      Citizen.CreateThread(function()
+        while time > 0 do
+            Citizen.Wait(0)
+            SetTextFont(4)
+            SetTextScale(0.45, 0.45)
+            SetTextColour(185, 185, 185, 255)
+            SetTextDropshadow(0, 0, 0, 0, 255)
+            SetTextEdge(1, 0, 0, 0, 255)
+            SetTextDropShadow()
+            SetTextOutline()
+            BeginTextCommandDisplayText('STRING')
+            AddTextComponentSubstringPlayerName(" ~g~ - CAR RENTAL DURATION:"..second(time))
+            EndTextCommandDisplayText(0.05, 0.55)
+        end
+    end)
+end
+
 
 function ELoadModel(model)
     if HasModelLoaded(model) then
@@ -77,6 +118,7 @@ function EYESSpawnVehicle(model, cb, coords, isnetworked, teleportInto)
     isnetworked = isnetworked or true
     ELoadModel(model)
     local veh = CreateVehicle(model, coords.x, coords.y, coords.z, coords.w, isnetworked, false)
+    rent(veh)
     local netid = NetworkGetNetworkIdFromEntity(veh)
     SetVehicleHasBeenOwnedByPlayer(veh, true)
     SetNetworkIdCanMigrate(netid, true)
