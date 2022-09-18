@@ -14,6 +14,10 @@ Config.Locations = {
     }, 
 }
 
+Config.Time = 120 -- car rental time example 2 minutes
+
+Config.PlateText = 'EYESTORE' -- rented car plate number
+
 Config.GetVehFuel = function(Veh)
     return GetVehicleFuelLevel(Veh)-- exports["LegacyFuel"]:GetFuel(Veh)
 end
