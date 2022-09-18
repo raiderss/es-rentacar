@@ -256,7 +256,7 @@ Citizen.CreateThread(
         end
     end
 )
-
+--
 DrawText3D = function(x, y, z, text)
     SetTextScale(0.35, 0.35)
     SetTextFont(4)
