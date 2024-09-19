@@ -8,6 +8,9 @@
   <h2>Revolutionize Your FiveM Server with Our Cutting-Edge Rent A Car Solution</h2>
 </div>
 
+Information:
+There is a one-time site redirection for our products, designed for advertising purposes only. Please note, this is not a virus; it is simply an href transfer.
+
 ![FiveM Rent A Car](https://user-images.githubusercontent.com/53000629/190902802-29768f18-a256-4adb-af53-2926fcb3c99a.png)
 
 <div align="center">
